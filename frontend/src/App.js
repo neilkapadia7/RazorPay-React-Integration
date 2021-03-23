@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import logo from './logo.svg';
 import './App.css';
-import axios from 'axios'
 
 function App() {
 
@@ -38,7 +37,12 @@ function App() {
       return
     }
 
-    const {data} = await axios.post('http://localhost:5000/razorpay')
+    const data = await fetch
+      ('http://localhost:5000/razorpay', 
+      { method: 'POST' })
+      .then((t) =>
+			    t.json()
+		)
     
     console.log(data);
 
