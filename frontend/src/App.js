@@ -26,8 +26,6 @@ function App() {
   const __DEV__ = document.domain === 'localhost'
 
   
-
-
   const displayRazorPay = async () => {
     
     const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
